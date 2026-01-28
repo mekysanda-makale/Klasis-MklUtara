@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Potensi Klasis Makale Utara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; padding-top: 50px; }
+        .card { border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .hidden { display: none; }
+        .question-title { font-weight: bold; margin-bottom: 10px; display: block; }
+        .btn-primary { background-color: #0056b3; border: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="section-respondent" class="card p-4">
+        <h3 class="text-center mb-4">IDENTITAS RESPONDEN</h3>
+        <div class="mb-3">
+            <label class="form-label">NAMA :</label>
+            <input type="text" id="resp_nama" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ASAL JEMAAT :</label>
+            <select id="resp_jemaat" class="form-select" required>
+                <option value="">-- Pilih Jemaat --</option>
+                <option value="SILO BARANI">SILO BARANI</option>
+                <option value="TBR">TBR</option>
+                <option value="BUNGIN">BUNGIN</option>
+                <option value="RTM">RTM</option>
+                <option value="K. A'GASINGAN">K. A'GASINGAN</option>
+                <option value="CK SIPATE">CK SIPATE</option>
+                <option value="PNIEL SIGUNTU">PNIEL SIGUNTU</option>
+                <option value="MARANATHA LUAK">MARANATHA LUAK</option>
+                <option value="P.T. BONTONGAN">P.T. BONTONGAN</option>
+                <option value="RANTELEMO">RANTELEMO</option>
+                <option value="K. PATONGLOAN">K. PATONGLOAN</option>
+                <option value="LIMBU">LIMBU</option>
+                <option value="PARAMPO">PARAMPO</option>
+                <option value="IMANUEL MANDETEK">IMANUEL MANDETEK</option>
+                <option value="SION KAMELE">SION KAMELE</option>
+                <option value="MAREALI">MAREALI</option>
+                <option value="G. LEMO">G. LEMO</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary w-100" onclick="showSurvey()">LANJUTKAN</button>
+    </div>
+
+    <form id="mainSurvey" class="hidden">
+        <div class="card p-4">
+            <h4 class="text-center mb-4">DAFTAR PERTANYAAN</h4>
+            
+            <div class="mb-4">
+                <span class="question-title">1. Apakah anda mengetahui bahwa dalam merancang arah Gereja Toraja tahun 2021-2026 menggunakan pendekatan berbasis potensi (Appreciative Inquiry)? [cite: 3]</span>
+                <div class="form-check"><input type="radio" name="q1" value="a" class="form-check-input" onclick="toggleSub('sub1', false)"> <label>a. Ya [cite: 4]</label></div>
+                <div class="form-check"><input type="radio" name="q1" value="b" class="form-check-input" onclick="toggleSub('sub1', false)"> <label>b. Ragu-ragu [cite: 5]</label></div>
+                <div class="form-check"><input type="radio" name="q1" value="c" class="form-check-input" onclick="toggleSub('sub1', true)"> <label>c. Tidak [cite: 6]</label></div>
+                
+                <div id="sub1" class="hidden ms-4 mt-2 p-2 border-start border-3">
+                    <span class="small text-muted">Mengapa Anda tidak mengetahuinya? [cite: 7]</span>
+                    <div class="form-check"><input type="radio" name="q1_sub" value="a"> a. Tidak ada sosialisasi Sinode [cite: 8]</div>
+                    <div class="form-check"><input type="radio" name="q1_sub" value="b"> b. Tidak ada sosialisasi Wilayah [cite: 9]</div>
+                    <div class="form-check"><input type="radio" name="q1_sub" value="c"> c. Tidak ada sosialisasi Klasis [cite: 10]</div>
+                    <div class="form-check"><input type="radio" name="q1_sub" value="d"> d. Tidak ada sosialisasi Pendeta [cite: 11]</div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <span class="question-title">13. Apakah Anda mengetahui bahwa sebelum SSA XXV di Kanuruan, Gereja Toraja menggunakan SWOT? [cite: 12]</span>
+                <div class="form-check"><input type="radio" name="q13" value="a" class="form-check-input" onclick="toggleSub('sub13', false)"> <label>a. Ya [cite: 13]</label></div>
+                <div class="form-check"><input type="radio" name="q13" value="b" class="form-check-input" onclick="toggleSub('sub13', false)"> <label>b. Ragu-ragu [cite: 14]</label></div>
+                <div class="form-check"><input type="radio" name="q13" value="c" class="form-check-input" onclick="toggleSub('sub13', true)"> <label>c. Tidak [cite: 15]</label></div>
+                
+                <div id="sub13" class="hidden ms-4 mt-2">
+                    <span class="small text-muted">Alasan: [cite: 16]</span><br>
+                    <input type="radio" name="q13_sub" value="a"> a [cite: 17] | <input type="radio" name="q13_sub" value="b"> b [cite: 18] | <input type="radio" name="q13_sub" value="c"> c [cite: 19] | <input type="radio" name="q13_sub" value="d"> d [cite: 20]
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <span class="question-title">24. Apakah dalam jemaat telah dilaksanakan dengan BAIK Pengakaran teologi? [cite: 261]</span>
+                <div class="form-check"><input type="radio" name="q24" value="Ya" class="form-check-input"> Ya [cite: 262]</div>
+                <div class="form-check"><input type="radio" name="q24" value="Ragu-ragu" class="form-check-input"> Ragu-ragu [cite: 263]</div>
+                <div class="form-check"><input type="radio" name="q24" value="Belum" class="form-check-input"> Belum [cite: 264]</div>
+                <textarea name="q24_alasan" class="form-control mt-2" maxlength="300" placeholder="Berikan alasan (Maks 300 Karakter)"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <span class="question-title">28. Apakah dalam jemaat telah dilaksanakan dengan BAIK pengembangan spiritualitas pelayan? [cite: 285]</span>
+                <div class="form-check"><input type="radio" name="q28" value="a" onclick="toggleSub('reason28', false)"> a. Ya [cite: 286]</div>
+                <div class="form-check"><input type="radio" name="q28" value="b" onclick="toggleSub('reason28', false)"> b. Ragu-ragu [cite: 287]</div>
+                <div class="form-check"><input type="radio" name="q28" value="c" onclick="toggleSub('reason28', true)"> c. Belum [cite: 288]</div>
+                <div id="reason28" class="hidden mt-2">
+                    <textarea name="q28_alasan" class="form-control" maxlength="300" placeholder="Sebutkan alasan memilih Belum..."></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <button type="button" class="btn btn-success btn-lg w-100" onclick="submitData()">KIRIM JAWABAN</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function showSurvey() {
+        const nama = document.getElementById('resp_nama').value;
+        const jemaat = document.getElementById('resp_jemaat').value;
+        if(nama && jemaat) {
+            document.getElementById('section-respondent').classList.add('hidden');
+            document.getElementById('mainSurvey').classList.remove('hidden');
+            window.scrollTo(0,0);
+        } else {
+            alert("Harap isi Nama dan Asal Jemaat!");
+        }
+    }
+
+    function toggleSub(id, show) {
+        const el = document.getElementById(id);
+        el.style.display = show ? 'block' : 'none';
+    }
+
+    function submitData() {
+        const form = document.getElementById('mainSurvey');
+        const formData = new FormData(form);
+        const data = {
+            nama: document.getElementById('resp_nama').value,
+            jemaat: document.getElementById('resp_jemaat').value
+        };
+        formData.forEach((value, key) => { data[key] = value; });
+
+        // Ganti URL ini dengan URL Web App dari Google Apps Script Anda
+        const WEB_APP_URL = "URL_GOOGLE_APPS_SCRIPT_ANDA_DI_SINI";
+
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(() => {
+            alert("Data berhasil dikirim!");
+            location.reload();
+        }).catch(err => alert("Kesalahan: " + err));
+    }
+</script>
+</body>
+</html>
